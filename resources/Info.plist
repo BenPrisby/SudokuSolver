@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en-US</string>
+    <key>CFBundleDisplayName</key>
+    <string>Sudoku Solver</string>
+    <key>CFBundleExecutable</key>
+    <string>SudokuSolver</string>
+    <key>CFBundleGetInfoString</key>
+    <string>Simple Sudoku puzzle solver.</string>
+    <key>CFBundleIconFile</key>
+    <string>@ICON@</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.benprisby.sudokusolver</string>
+    <key>CFBundleName</key>
+    <string>Sudoku Solver</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>@SHORT_VERSION@</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleVersion</key>
+    <string>@FULL_VERSION@</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.14</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2019 Ben Prisby. All rights reserved.</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+</dict>
+</plist>

@@ -1,0 +1,60 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+
+
+Source file containing the main entry point for the application.  
+
+
+{\ttfamily \#include $<$Q\+Font\+Database$>$}\newline
+{\ttfamily \#include $<$Q\+Gui\+Application$>$}\newline
+{\ttfamily \#include $<$Q\+Qml\+Application\+Engine$>$}\newline
+{\ttfamily \#include \char`\"{}solverengine.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Qml\+Application\+Engine $\ast$ \mbox{\hyperlink{main_8cpp_a7eeee6c5d8bc5dd2eb800c95b1264b61}{p\+Engine}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Source file containing the main entry point for the application. 
+
+\begin{DoxyAuthor}{Author}
+Ben Prisby \href{mailto:ben@benprisby.com}{\tt ben@benprisby.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Entry point for the application, responsible for setting up the engine and Q\+ML view before running the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of arguments, used for creation of the application. \\
+\hline
+{\em argv} & The arguments, used for creation of the application. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return code from executing the application. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a7eeee6c5d8bc5dd2eb800c95b1264b61}\label{main_8cpp_a7eeee6c5d8bc5dd2eb800c95b1264b61}} 
+\index{main.\+cpp@{main.\+cpp}!p\+Engine@{p\+Engine}}
+\index{p\+Engine@{p\+Engine}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{p\+Engine}{pEngine}}
+{\footnotesize\ttfamily Q\+Qml\+Application\+Engine $\ast$ p\+Engine = nullptr}
+
+The Q\+ML engine where the view will be loaded. 

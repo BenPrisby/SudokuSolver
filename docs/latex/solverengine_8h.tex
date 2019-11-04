@@ -1,0 +1,57 @@
+\hypertarget{solverengine_8h}{}\section{src/solverengine.h File Reference}
+\label{solverengine_8h}\index{src/solverengine.\+h@{src/solverengine.\+h}}
+
+
+Contains the functionality for the engine used to model and solve puzzles as well as controlling the view.  
+
+
+{\ttfamily \#include $<$Q\+Object$>$}\newline
+{\ttfamily \#include $<$Q\+Qml\+Engine$>$}\newline
+{\ttfamily \#include $<$Q\+Vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_solver_engine}{Solver\+Engine}}
+\begin{DoxyCompactList}\small\item\em Class containing all functionality required for modeling, solving, and managing puzzles. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_solver_engine_1_1x_location__t}{Solver\+Engine\+::x\+Location\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Struct for holding a location on the board, consisting of a row and column position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Object $\ast$ \mbox{\hyperlink{solverengine_8h_add57c157d38db29692f8ef52d60fcb75}{solverengine\+\_\+singletontype\+\_\+provider}} (Q\+Qml\+Engine $\ast$\mbox{\hyperlink{solverengine_8cpp_aec736d5cd15fe51423de4c1648d518bc}{p\+Engine}}, Q\+J\+S\+Engine $\ast$p\+Script\+Engine)
+\begin{DoxyCompactList}\small\item\em Provides the Singleton instance pointer for use within the Q\+ML context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the functionality for the engine used to model and solve puzzles as well as controlling the view. 
+
+\begin{DoxyAuthor}{Author}
+Ben Prisby \href{mailto:ben@benprisby.com}{\tt ben@benprisby.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{solverengine_8h_add57c157d38db29692f8ef52d60fcb75}\label{solverengine_8h_add57c157d38db29692f8ef52d60fcb75}} 
+\index{solverengine.\+h@{solverengine.\+h}!solverengine\+\_\+singletontype\+\_\+provider@{solverengine\+\_\+singletontype\+\_\+provider}}
+\index{solverengine\+\_\+singletontype\+\_\+provider@{solverengine\+\_\+singletontype\+\_\+provider}!solverengine.\+h@{solverengine.\+h}}
+\subsubsection{\texorpdfstring{solverengine\+\_\+singletontype\+\_\+provider()}{solverengine\_singletontype\_provider()}}
+{\footnotesize\ttfamily Q\+Object$\ast$ solverengine\+\_\+singletontype\+\_\+provider (\begin{DoxyParamCaption}\item[{Q\+Qml\+Engine $\ast$}]{p\+Engine,  }\item[{Q\+J\+S\+Engine $\ast$}]{p\+Script\+Engine }\end{DoxyParamCaption})}
+
+
+
+Provides the Singleton instance pointer for use within the Q\+ML context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Engine} & The Q\+ML engine where the view is loaded. \\
+\hline
+{\em p\+Script\+Engine} & The Java\+Script engine associated with the view. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_solver_engine_abc1e088d35a6702a58c57e3344348eab}{Solver\+Engine\+::instance()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Singleton instance pointer to this engine. 
+\end{DoxyReturn}

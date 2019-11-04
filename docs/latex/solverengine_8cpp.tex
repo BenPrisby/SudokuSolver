@@ -1,0 +1,71 @@
+\hypertarget{solverengine_8cpp}{}\section{src/solverengine.cpp File Reference}
+\label{solverengine_8cpp}\index{src/solverengine.\+cpp@{src/solverengine.\+cpp}}
+
+
+Source file for the engine class.  
+
+
+{\ttfamily \#include \char`\"{}solverengine.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Core\+Application$>$}\newline
+{\ttfamily \#include $<$Q\+Date\+Time$>$}\newline
+{\ttfamily \#include $<$Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Q\+Qml\+Application\+Engine$>$}\newline
+{\ttfamily \#include $<$Q\+Qml\+Context$>$}\newline
+{\ttfamily \#include $<$Qt\+Math$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Object $\ast$ \mbox{\hyperlink{solverengine_8cpp_add57c157d38db29692f8ef52d60fcb75}{solverengine\+\_\+singletontype\+\_\+provider}} (Q\+Qml\+Engine $\ast$\mbox{\hyperlink{solverengine_8cpp_aec736d5cd15fe51423de4c1648d518bc}{p\+Engine}}, Q\+J\+S\+Engine $\ast$p\+Script\+Engine)
+\begin{DoxyCompactList}\small\item\em Provides the Singleton instance pointer for use within the Q\+ML context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Qml\+Application\+Engine $\ast$ \mbox{\hyperlink{solverengine_8cpp_aec736d5cd15fe51423de4c1648d518bc}{p\+Engine}}
+\begin{DoxyCompactList}\small\item\em The Q\+ML engine where the view will be loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Source file for the engine class. 
+
+\begin{DoxyAuthor}{Author}
+Ben Prisby \href{mailto:ben@benprisby.com}{\tt ben@benprisby.\+com} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{solverengine_8cpp_add57c157d38db29692f8ef52d60fcb75}\label{solverengine_8cpp_add57c157d38db29692f8ef52d60fcb75}} 
+\index{solverengine.\+cpp@{solverengine.\+cpp}!solverengine\+\_\+singletontype\+\_\+provider@{solverengine\+\_\+singletontype\+\_\+provider}}
+\index{solverengine\+\_\+singletontype\+\_\+provider@{solverengine\+\_\+singletontype\+\_\+provider}!solverengine.\+cpp@{solverengine.\+cpp}}
+\subsubsection{\texorpdfstring{solverengine\+\_\+singletontype\+\_\+provider()}{solverengine\_singletontype\_provider()}}
+{\footnotesize\ttfamily Q\+Object$\ast$ solverengine\+\_\+singletontype\+\_\+provider (\begin{DoxyParamCaption}\item[{Q\+Qml\+Engine $\ast$}]{p\+Engine,  }\item[{Q\+J\+S\+Engine $\ast$}]{p\+Script\+Engine }\end{DoxyParamCaption})}
+
+
+
+Provides the Singleton instance pointer for use within the Q\+ML context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Engine} & The Q\+ML engine where the view is loaded. \\
+\hline
+{\em p\+Script\+Engine} & The Java\+Script engine associated with the view. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_solver_engine_abc1e088d35a6702a58c57e3344348eab}{Solver\+Engine\+::instance()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The Singleton instance pointer to this engine. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{solverengine_8cpp_aec736d5cd15fe51423de4c1648d518bc}\label{solverengine_8cpp_aec736d5cd15fe51423de4c1648d518bc}} 
+\index{solverengine.\+cpp@{solverengine.\+cpp}!p\+Engine@{p\+Engine}}
+\index{p\+Engine@{p\+Engine}!solverengine.\+cpp@{solverengine.\+cpp}}
+\subsubsection{\texorpdfstring{p\+Engine}{pEngine}}
+{\footnotesize\ttfamily Q\+Qml\+Application\+Engine$\ast$ p\+Engine}
+
+
+
+The Q\+ML engine where the view will be loaded. 
+
