@@ -53,7 +53,59 @@ $(function() {
 <div class="title">SudokuSolver </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Simple Sudoku puzzle solver built in Qt. </p>
+<div class="textblock"><p>The Sudoku Solver is a simple application for, as the name implies, solving Sudoku puzzles. It is built against the Qt framework with a QML view, making it available and easy to build for macOS, Windows, and Linux.</p>
+<h2>Features</h2>
+<p>The QML view offers a simple UI for entering in the puzzle to be solved. A single action button initiates the solving process, displaying the final solution and time taken to solve once completed.</p>
+<p>Invalid input puzzles (i.e. those with rule violations already present) will be rejected and an error message will be displayed when attempting to solve.</p>
+<p>After solving, the action button allows clearing of the grid to enter another puzzle to solve.</p>
+<h2>Algorithm</h2>
+<p>The heart of the solving engine uses a backtracking algorithm to solve the puzzle. Values are placed until the board is either solved or no more valid placements are available. When this occurs, the algorithm steps back until another valid choice can be made. Optimizations have been added to improve the efficiency of the traditional brute-force approach.</p>
+<p>An internal conflict model tracks conflicts along rows, columns, and squares to improve the algorithm's guess at placing the next value. Data containers for these models ensure constant time lookups and the algorithm is able to move on to the next possible placement as soon as one of the three possible conflicts has been found.</p>
+<p>The engine also keeps track of the position of the last-placed value to speed up search times for the next available cell. Since the algorithm works left-to-right, top-to-bottom, doing this cuts down on the time required to find blank cells as opposed to starting at the top-left of the board every time.</p>
+<h2>Project Contents</h2>
+<h3>docs</h3>
+<ul>
+<li>Generated documentation from the source files using <a href="http://www.doxygen.nl">Doxygen</a></li>
+</ul>
+<h3>Doxyfile</h3>
+<ul>
+<li>Configuration file for Doxygen</li>
+</ul>
+<h3>qml</h3>
+<ul>
+<li>QML components used throughout the application</li>
+</ul>
+<h3>resources</h3>
+<ul>
+<li>Design assets for the application</li>
+<li>macOS app bundle metadata file (<em>Info.plist</em>)</li>
+<li>Generic application icon (<em>icon.png</em>)</li>
+<li>macOS application icon file (<em>icon_apple.icns</em>)</li>
+<li>Windows application icon file (<em>icon_windows.ico</em>)</li>
+<li>Windows resource file (<em>myapp.rc</em>)</li>
+</ul>
+<h3>src</h3>
+<ul>
+<li>C++ source files for the application</li>
+</ul>
+<h3>SudokuSolver.pro</h3>
+<ul>
+<li>Qt project file</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li><a href="https://www.qt.io/download">Qt 5.12 (Open Source)</a><ul>
+<li>Releases are built against 5.12.5 (currently the latest stable 5.12 release).</li>
+<li>After installation is complete, it is recommended to add Qt to the PATH environment variable (i.e. <code>export PATH=~/Qt/5.12.5/clang_64/bin:$PATH</code> added to <code>~/.bash_profile</code> on macOS) to facilitate running build scripts (coming soon). System installations may already include a version of <code>qmake</code> (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the PATH correctly.</li>
+</ul>
+</li>
+</ul>
+<h2>Building and Running</h2>
+<p>After checking out the project, the simplest way to build and run is through Qt Creator:</p>
+<ol type="1">
+<li>Open the project file, <em>SudokuSolver.pro</em> in the project root.</li>
+<li>Build the project. </li>
+</ol>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

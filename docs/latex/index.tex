@@ -1,1 +1,87 @@
-Simple Sudoku puzzle solver built in Qt. 
+The Sudoku Solver is a simple application for, as the name implies, solving Sudoku puzzles. It is built against the Qt framework with a Q\+ML view, making it available and easy to build for mac\+OS, Windows, and Linux.
+
+\subsection*{Features}
+
+The Q\+ML view offers a simple UI for entering in the puzzle to be solved. A single action button initiates the solving process, displaying the final solution and time taken to solve once completed.
+
+Invalid input puzzles (i.\+e. those with rule violations already present) will be rejected and an error message will be displayed when attempting to solve.
+
+After solving, the action button allows clearing of the grid to enter another puzzle to solve.
+
+\subsection*{Algorithm}
+
+The heart of the solving engine uses a backtracking algorithm to solve the puzzle. Values are placed until the board is either solved or no more valid placements are available. When this occurs, the algorithm steps back until another valid choice can be made. Optimizations have been added to improve the efficiency of the traditional brute-\/force approach.
+
+An internal conflict model tracks conflicts along rows, columns, and squares to improve the algorithm\textquotesingle{}s guess at placing the next value. Data containers for these models ensure constant time lookups and the algorithm is able to move on to the next possible placement as soon as one of the three possible conflicts has been found.
+
+The engine also keeps track of the position of the last-\/placed value to speed up search times for the next available cell. Since the algorithm works left-\/to-\/right, top-\/to-\/bottom, doing this cuts down on the time required to find blank cells as opposed to starting at the top-\/left of the board every time.
+
+\subsection*{Project Contents}
+
+\subsubsection*{docs}
+
+
+\begin{DoxyItemize}
+\item Generated documentation from the source files using \href{http://www.doxygen.nl}{\tt Doxygen}
+\end{DoxyItemize}
+
+\subsubsection*{Doxyfile}
+
+
+\begin{DoxyItemize}
+\item Configuration file for Doxygen
+\end{DoxyItemize}
+
+\subsubsection*{qml}
+
+
+\begin{DoxyItemize}
+\item Q\+ML components used throughout the application
+\end{DoxyItemize}
+
+\subsubsection*{resources}
+
+
+\begin{DoxyItemize}
+\item Design assets for the application
+\item mac\+OS app bundle metadata file ({\itshape Info.\+plist})
+\item Generic application icon ({\itshape icon.\+png})
+\item mac\+OS application icon file ({\itshape icon\+\_\+apple.\+icns})
+\item Windows application icon file ({\itshape icon\+\_\+windows.\+ico})
+\item Windows resource file ({\itshape myapp.\+rc})
+\end{DoxyItemize}
+
+\subsubsection*{src}
+
+
+\begin{DoxyItemize}
+\item C++ source files for the application
+\end{DoxyItemize}
+
+\subsubsection*{Sudoku\+Solver.\+pro}
+
+
+\begin{DoxyItemize}
+\item Qt project file
+\end{DoxyItemize}
+
+\subsection*{Prerequisites}
+
+
+\begin{DoxyItemize}
+\item \href{https://www.qt.io/download}{\tt Qt 5.\+12 (Open Source)}
+\begin{DoxyItemize}
+\item Releases are built against 5.\+12.\+5 (currently the latest stable 5.\+12 release).
+\item After installation is complete, it is recommended to add Qt to the P\+A\+TH environment variable (i.\+e. {\ttfamily export P\+A\+TH=$\sim$/\+Qt/5.12.\+5/clang\+\_\+64/bin\+:\$\+P\+A\+TH} added to {\ttfamily $\sim$/.bash\+\_\+profile} on mac\+OS) to facilitate running build scripts (coming soon). System installations may already include a version of {\ttfamily qmake} (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the P\+A\+TH correctly.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Building and Running}
+
+After checking out the project, the simplest way to build and run is through Qt Creator\+:
+
+
+\begin{DoxyEnumerate}
+\item Open the project file, {\itshape Sudoku\+Solver.\+pro} in the project root.
+\item Build the project. 
+\end{DoxyEnumerate}
