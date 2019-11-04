@@ -11,7 +11,6 @@
 #include <QDebug>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QtMath>
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 /**
