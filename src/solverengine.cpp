@@ -264,8 +264,8 @@ bool SolverEngine::canPlaceValue( const xLocation_t & xLocation, const int iValu
 int SolverEngine::squareNumberFromLocation( const xLocation_t & xLocation ) const
 {
     // Squares are 0-8 starting from the top-left and incrementing across rows.
-    const int iX = qFloor( static_cast<qreal>( xLocation.iRow ) / 3 );
-    const int iY = qFloor( static_cast<qreal>( xLocation.iColumn ) / 3 );
+    const int iX = xLocation.iRow / 3;
+    const int iY = xLocation.iColumn / 3;
 
     return ( iX * 3 ) + iY;
 }
