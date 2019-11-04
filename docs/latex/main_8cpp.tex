@@ -13,12 +13,12 @@ Source file containing the main entry point for the application.
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Entry point for the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 Q\+Qml\+Application\+Engine $\ast$ \mbox{\hyperlink{main_8cpp_a7eeee6c5d8bc5dd2eb800c95b1264b61}{p\+Engine}} = nullptr
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The Q\+ML engine where the view will be loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -36,9 +36,11 @@ Ben Prisby \href{mailto:ben@benprisby.com}{\tt ben@benprisby.\+com}
 \subsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-Entry point for the application, responsible for setting up the engine and Q\+ML view before running the application.
 
 
+Entry point for the application. 
+
+This function is responsible for setting up the engine and Q\+ML view before running the application. 
 \begin{DoxyParams}{Parameters}
 {\em argc} & The number of arguments, used for creation of the application. \\
 \hline
@@ -57,4 +59,7 @@ The return code from executing the application.
 \subsubsection{\texorpdfstring{p\+Engine}{pEngine}}
 {\footnotesize\ttfamily Q\+Qml\+Application\+Engine $\ast$ p\+Engine = nullptr}
 
+
+
 The Q\+ML engine where the view will be loaded. 
+

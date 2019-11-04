@@ -15,14 +15,14 @@ extern QQmlApplicationEngine * pEngine;
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 /**
- * The QML engine where the view will be loaded.
+ * @brief The QML engine where the view will be loaded.
  */
 QQmlApplicationEngine * pEngine = nullptr;
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 /**
- * Entry point for the application, responsible for setting up the engine and QML view before running the application.
- *
+ * @brief Entry point for the application.
+ * @details This function is responsible for setting up the engine and QML view before running the application.
  * @param argc The number of arguments, used for creation of the application.
  * @param argv The arguments, used for creation of the application.
  * @return The return code from executing the application.
