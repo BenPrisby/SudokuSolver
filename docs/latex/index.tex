@@ -18,6 +18,13 @@ The engine also keeps track of the position of the last-\/placed value to speed 
 
 \subsection*{Project Contents}
 
+\subsubsection*{build}
+
+
+\begin{DoxyItemize}
+\item Build scripts and deployment assets for Linux, mac\+OS, and Windows
+\end{DoxyItemize}
+
 \subsubsection*{docs}
 
 
@@ -72,7 +79,7 @@ The engine also keeps track of the position of the last-\/placed value to speed 
 \item \href{https://www.qt.io/download}{\tt Qt 5.\+12 (Open Source)}
 \begin{DoxyItemize}
 \item Releases are built against 5.\+12.\+5 (currently the latest stable 5.\+12 release).
-\item After installation is complete, it is recommended to add Qt to the P\+A\+TH environment variable (i.\+e. {\ttfamily export P\+A\+TH=$\sim$/\+Qt/5.12.\+5/clang\+\_\+64/bin\+:\$\+P\+A\+TH} added to {\ttfamily $\sim$/.bash\+\_\+profile} on mac\+OS) to facilitate running build scripts (coming soon). System installations may already include a version of {\ttfamily qmake} (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the P\+A\+TH correctly.
+\item After installation is complete, it is recommended to add Qt to the P\+A\+TH environment variable (i.\+e. {\ttfamily export P\+A\+TH=$\sim$/\+Qt/5.12.\+5/clang\+\_\+64/bin\+:\$\+P\+A\+TH} added to {\ttfamily $\sim$/.bash\+\_\+profile} on mac\+OS) to facilitate running build scripts. System installations may already include a version of {\ttfamily qmake} (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the P\+A\+TH correctly.
 \end{DoxyItemize}
 \end{DoxyItemize}
 
@@ -83,5 +90,16 @@ After checking out the project, the simplest way to build and run is through Qt 
 
 \begin{DoxyEnumerate}
 \item Open the project file, {\itshape Sudoku\+Solver.\+pro} in the project root.
-\item Build the project. 
+\item Build the project.
 \end{DoxyEnumerate}
+
+\subsection*{Deployment}
+
+Build scripts have been created for each platform that will produce either a standalone executable or installer\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Linux\+:} Inside {\itshape build/\+Linux}, run the script {\ttfamily create\+\_\+linux\+\_\+app} to build the utility and create an \href{https://appimage.org}{\tt App\+Image} file.
+\item {\bfseries mac\+OS\+:} Inside {\itshape build/mac\+OS}, run the script {\ttfamily create\+\_\+mac\+\_\+app.\+command} to build the utility and create a D\+MG file.
+\item {\bfseries Windows\+:} Inside {\itshape build/\+Windows}, run the script {\ttfamily create\+\_\+windows\+\_\+installer.\+bat} to build the utility and create a Windows Installer. This application uses the free \href{http://www.jrsoftware.org/isinfo.php}{\tt Inno Setup} for packaging on Windows, so this must be installed and made accessible in the P\+A\+TH as a prerequisite for running this script. 
+\end{DoxyItemize}

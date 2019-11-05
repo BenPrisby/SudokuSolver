@@ -65,7 +65,7 @@ double \mbox{\hyperlink{class_solver_engine_aac9c7fba1a049fe08bcfd341700840fb}{s
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_solver_engine_a677b5fe26a9eea0dea994cc3f9027211}{Solver\+Engine}} ()
+\mbox{\hyperlink{class_solver_engine_a76b66694da6f16000f3d9e268d87a74f}{Solver\+Engine}} (Q\+Object $\ast$p\+Parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor for the engine, responsible for initializing classing members. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_solver_engine_a24a236b02f997c594c259d15167e32d1}{update\+Screen}} ()
 \begin{DoxyCompactList}\small\item\em Writes out the current internal board model to the Q\+ML view to display it to the user. \end{DoxyCompactList}\item 
@@ -136,16 +136,21 @@ Engine\+State\+\_\+\+Error&The engine encountered an error. \\
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_solver_engine_a677b5fe26a9eea0dea994cc3f9027211}\label{class_solver_engine_a677b5fe26a9eea0dea994cc3f9027211}} 
+\mbox{\Hypertarget{class_solver_engine_a76b66694da6f16000f3d9e268d87a74f}\label{class_solver_engine_a76b66694da6f16000f3d9e268d87a74f}} 
 \index{Solver\+Engine@{Solver\+Engine}!Solver\+Engine@{Solver\+Engine}}
 \index{Solver\+Engine@{Solver\+Engine}!Solver\+Engine@{Solver\+Engine}}
 \subsubsection{\texorpdfstring{Solver\+Engine()}{SolverEngine()}}
-{\footnotesize\ttfamily Solver\+Engine\+::\+Solver\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily Solver\+Engine\+::\+Solver\+Engine (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{p\+Parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [private]}}
 
 
 
 Constructor for the engine, responsible for initializing classing members. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Parent} & The parent of the engine. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -183,7 +188,7 @@ True if there are no known conflicts with the proposed location and value, false
 Returns the Singleton instance associated with this engine. 
 
 This function calls the constructor to create a new instance if not already done. \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_solver_engine_a677b5fe26a9eea0dea994cc3f9027211}{Solver\+Engine()}} 
+\mbox{\hyperlink{class_solver_engine_a76b66694da6f16000f3d9e268d87a74f}{Solver\+Engine()}} 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 The pointer to the Singleton instance. 

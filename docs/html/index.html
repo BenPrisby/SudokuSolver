@@ -63,6 +63,10 @@ $(function() {
 <p>An internal conflict model tracks conflicts along rows, columns, and squares to improve the algorithm's guess at placing the next value. Data containers for these models ensure constant time lookups and the algorithm is able to move on to the next possible placement as soon as one of the three possible conflicts has been found.</p>
 <p>The engine also keeps track of the position of the last-placed value to speed up search times for the next available cell. Since the algorithm works left-to-right, top-to-bottom, doing this cuts down on the time required to find blank cells as opposed to starting at the top-left of the board every time.</p>
 <h2>Project Contents</h2>
+<h3>build</h3>
+<ul>
+<li>Build scripts and deployment assets for Linux, macOS, and Windows</li>
+</ul>
 <h3>docs</h3>
 <ul>
 <li>Generated documentation from the source files using <a href="http://www.doxygen.nl">Doxygen</a></li>
@@ -96,7 +100,7 @@ $(function() {
 <ul>
 <li><a href="https://www.qt.io/download">Qt 5.12 (Open Source)</a><ul>
 <li>Releases are built against 5.12.5 (currently the latest stable 5.12 release).</li>
-<li>After installation is complete, it is recommended to add Qt to the PATH environment variable (i.e. <code>export PATH=~/Qt/5.12.5/clang_64/bin:$PATH</code> added to <code>~/.bash_profile</code> on macOS) to facilitate running build scripts (coming soon). System installations may already include a version of <code>qmake</code> (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the PATH correctly.</li>
+<li>After installation is complete, it is recommended to add Qt to the PATH environment variable (i.e. <code>export PATH=~/Qt/5.12.5/clang_64/bin:$PATH</code> added to <code>~/.bash_profile</code> on macOS) to facilitate running build scripts. System installations may already include a version of <code>qmake</code> (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the PATH correctly.</li>
 </ul>
 </li>
 </ul>
@@ -104,8 +108,15 @@ $(function() {
 <p>After checking out the project, the simplest way to build and run is through Qt Creator:</p>
 <ol type="1">
 <li>Open the project file, <em>SudokuSolver.pro</em> in the project root.</li>
-<li>Build the project. </li>
+<li>Build the project.</li>
 </ol>
+<h2>Deployment</h2>
+<p>Build scripts have been created for each platform that will produce either a standalone executable or installer:</p>
+<ul>
+<li><b>Linux:</b> Inside <em>build/Linux</em>, run the script <code>create_linux_app</code> to build the utility and create an <a href="https://appimage.org">AppImage</a> file.</li>
+<li><b>macOS:</b> Inside <em>build/macOS</em>, run the script <code>create_mac_app.command</code> to build the utility and create a DMG file.</li>
+<li><b>Windows:</b> Inside <em>build/Windows</em>, run the script <code>create_windows_installer.bat</code> to build the utility and create a Windows Installer. This application uses the free <a href="http://www.jrsoftware.org/isinfo.php">Inno Setup</a> for packaging on Windows, so this must be installed and made accessible in the PATH as a prerequisite for running this script. </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -139,8 +139,11 @@ private:
 
     /**
      * @brief Constructor for the engine, responsible for initializing classing members.
+     * @param pParent The parent of the engine.
      */
-    SolverEngine() : m_eState { EngineState_Idle }, m_dSolveTime { std::nan( "" ) }, m_xStartLocation( 0, 0 ) {}
+    explicit SolverEngine( QObject * pParent = nullptr ) :
+        QObject( pParent ), m_eState { EngineState_Idle }, m_dSolveTime { std::nan( "" ) }, m_xStartLocation( 0, 0 )
+    {}
 
     /**
      * @brief Writes out the current internal board model to the QML view to display it to the user.
