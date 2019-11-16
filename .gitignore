@@ -35,9 +35,13 @@ target_wrapper.*
 # QtCreator
 *.autosave
 
-# QtCreator Qml
+# QtCreator QML
 *.qmlproject.user
 *.qmlproject.user.*
 
 # QtCreator CMake
 CMakeLists.txt.user*
+
+# macOS
+.DS_Store
+
