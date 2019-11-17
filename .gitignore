@@ -45,3 +45,6 @@ CMakeLists.txt.user*
 # macOS
 .DS_Store
 
+# Build artifacts
+build/macOS/*.dmg
+
