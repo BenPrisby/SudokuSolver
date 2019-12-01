@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SudokuSolver
+Exec=SudokuSolver
+Icon=SudokuSolver
+Categories=Game;

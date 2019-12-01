@@ -45,3 +45,12 @@ CMakeLists.txt.user*
 # macOS
 .DS_Store
 
+# Build artifacts
+build_tmp
+build/macOS/*.dmg
+build/macOS/*.app
+build/macOS/dmg/dmg_tmp
+build/Linux/*.AppImage
+build/Linux/AppImage/SudokuSolver
+build/Windows/data
+

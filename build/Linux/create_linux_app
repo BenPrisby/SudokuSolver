@@ -1,0 +1,65 @@
+#!/bin/bash
+# DESCRIPTION: Creates a standalone Linux AppImage.
+# PARAMETERS: Version (optional)
+
+# Move to the current working directory.
+cd $(dirname ${BASH_SOURCE[ ${#BASH_SOURCE[@]} - 1 ]})
+
+# Attempt to locate Qt.
+QT="$(which qmake)"
+if [ ! -x "${QT}" ] ; then
+	echo 'ERROR: Failed to find Qt. Please ensure it is accessible in the PATH and try again.'
+	exit 1
+else
+	QT="${QT:0:${#QT}-6}"
+fi
+
+TARGET_NAME=SudokuSolver
+
+# Check if a version was specified.
+if [ $# -eq 1 ]; then
+    export VERSION="$1"
+    echo "Supplying version ${VERSION}..."
+else
+    export VERSION="1.0.0"
+    echo "No version specified, so using ${VERSION}..."
+fi
+
+# Prepare for the build.
+pushd . &> /dev/null
+rm -rf ../../build_tmp &> /dev/null
+rm -rf "AppImage/${TARGET_NAME}" &> /dev/null
+rm -f *.AppImage &> /dev/null
+
+# Build the application.
+pushd . &> /dev/null
+mkdir ../../build_tmp
+cd ../../build_tmp
+if ! qmake -config release "VERSION=${VERSION}" ../${TARGET_NAME}.pro; then
+	popd &> /dev/null
+	exit 1
+fi
+if ! make -j4; then
+	popd &> /dev/null
+	exit 1
+fi
+popd &> /dev/null
+
+# Deploy the application.
+pushd . &> /dev/null
+mkdir -p "AppImage/${TARGET_NAME}/usr/bin"
+cd "AppImage/${TARGET_NAME}"
+cp "../../../../build_tmp/${TARGET_NAME}" "usr/bin/${TARGET_NAME}"
+cp "../${TARGET_NAME}.desktop" .
+cp "../${TARGET_NAME}.png" .
+chmod a+x ../linuxdeployqt-continuous-x86_64.AppImage
+if ! ../linuxdeployqt-6-x86_64.AppImage "usr/bin/${TARGET_NAME}" -verbose=2 -no-copy-copyright-files -appimage -qmldir=${QT}/../qml; then
+	popd &> /dev/null
+	exit 1
+fi
+mv "${TARGET_NAME}-${VERSION}-x86_64.AppImage" "../../${TARGET_NAME}_${VERSION}-x86_64.AppImage"
+popd &> /dev/null
+
+# Done!
+echo "Application successfully created!"
+
