@@ -52,4 +52,5 @@ build/macOS/*.app
 build/macOS/dmg/dmg_tmp
 build/Linux/*.AppImage
 build/Linux/AppImage/SudokuSolver
+build/Windows/data
 

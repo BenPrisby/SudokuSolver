@@ -67,6 +67,3 @@ rem Create the installer.
 iscc install_script.iss
 popd
 
-rem Clean up.
-rmdir /s /q ..\..\build_tmp
-rmdir /s /q data
