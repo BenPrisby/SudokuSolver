@@ -46,5 +46,8 @@ CMakeLists.txt.user*
 .DS_Store
 
 # Build artifacts
+build_tmp
 build/macOS/*.dmg
+build/Linux/*.AppImage
+build/Linux/AppImage/SudokuSolver
 
