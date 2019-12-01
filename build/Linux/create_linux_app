@@ -15,6 +15,7 @@ else
 fi
 
 TARGET_NAME=SudokuSolver
+DISPLAY_NAME=Sudoku_Solver
 
 # Check if a version was specified.
 if [ $# -eq 1 ]; then
@@ -57,7 +58,7 @@ if ! ../linuxdeployqt-6-x86_64.AppImage "usr/bin/${TARGET_NAME}" -verbose=2 -no-
 	popd &> /dev/null
 	exit 1
 fi
-mv "${TARGET_NAME}-${VERSION}-x86_64.AppImage" "../../${TARGET_NAME}_${VERSION}-x86_64.AppImage"
+mv "${TARGET_NAME}-${VERSION}-x86_64.AppImage" "../../${DISPLAY_NAME}_${VERSION}-x86_64.AppImage"
 popd &> /dev/null
 
 # Done!
