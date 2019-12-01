@@ -20,6 +20,10 @@ The engine also keeps track of the position of the last-placed value to speed up
 
 ## Project Contents
 
+### build
+
+- Build scripts and deployment assets for macOS, Windows, and Linux
+
 ### docs
 
 - Generated documentation from the source files using [Doxygen](http://www.doxygen.nl)
@@ -53,8 +57,8 @@ The engine also keeps track of the position of the last-placed value to speed up
 
 -   [Qt 5.12 (Open Source)](https://www.qt.io/download)
 
-	-  Releases are built against 5.12.5 (currently the latest stable 5.12 release).
-	-	After installation is complete, it is recommended to add Qt to the PATH environment variable (i.e. `export PATH=~/Qt/5.12.5/clang_64/bin:$PATH` added to `~/.bash_profile` on macOS) to facilitate running build scripts (coming soon). System installations may already include a version of `qmake` (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the PATH correctly.
+	-  Releases are built against 5.12.6 (currently the latest stable 5.12 release).
+	-	After installation is complete, it is recommended to add Qt to the PATH environment variable (i.e. `export PATH=~/Qt/5.12.6/clang_64/bin:$PATH` added to `~/.bash_profile` on macOS) to facilitate running build scripts. System installations may already include a version of `qmake` (especially on Linux), so it is important to ensure that the new installation takes precedence over this by setting the PATH correctly.
 
 ## Building and Running
 
@@ -62,4 +66,12 @@ After checking out the project, the simplest way to build and run is through Qt 
 
 1. Open the project file, _SudokuSolver.pro_ in the project root.
 2. Build the project.
+
+## Deployment
+
+Build scripts have been created for each platform that will produce either a standalone executable or installer:
+
+-   **macOS:** Inside _build/macOS_, run the script `create_mac_app.command` to build the application and create a DMG file.
+-   **Linux:** Inside _build/Linux_, run the script `create_linux_app` to build the application and create an [AppImage](https://appimage.org) file.
+-   **Windows:** Inside _build/Windows_, run the script `create_windows_installer.bat` to build the application and create a Windows installer. This script uses the free [Inno Setup](http://www.jrsoftware.org/isinfo.php) for packaging on Windows, so this must be installed and made accessible in the PATH as a prerequisite for running this script.
 
