@@ -40,12 +40,10 @@ mkdir ../../build_tmp
 cd ../../build_tmp
 if ! qmake -config release "VERSION=${VERSION}" ../${TARGET_NAME}.pro; then
     popd > /dev/null
-    rm -rf ../../build_tmp
     exit 1
 fi
 if ! make -j4; then
     popd > /dev/null
-    rm -rf ../../build_tmp
     exit 1
 fi
 popd &> /dev/null
@@ -59,7 +57,6 @@ mv "${TARGET_NAME}.app" "${DISPLAY_NAME}.app" &> /dev/null
 # Prepare the application for deployment.
 if ! macdeployqt "${DISPLAY_NAME}.app" -qmldir=${QT}/../qml; then
     popd &> /dev/null
-    rm -rf ../../build_tmp
     exit 1
 fi
 popd &> /dev/null
@@ -103,11 +100,6 @@ hdiutil detach "/Volumes/${DISPLAY_NAME}" -force
 hdiutil convert "${TARGET_NAME}.dmg" -format UDZO -ov -o "${TARGET_NAME}.dmg"
 mv "${TARGET_NAME}.dmg" "${DISPLAY_FILENAME}_${VERSION}.dmg"
 popd &> /dev/null
-
-# Clean up the build artifacts.
-rm -rf ../../build_tmp
-rm -rf dmg/dmg_tmp
-rm -rf "${DISPLAY_NAME}.app"
 
 # Done!
 echo "Installer successfully created!"
